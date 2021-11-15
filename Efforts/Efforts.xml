@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Efforts</name>
+    </assembly>
+    <members>
+        <member name="T:Efforts.Configuration.ConnectionStrings">
+            <summary>
+            configuration options for connection strings
+            </summary>
+        </member>
+        <member name="P:Efforts.Configuration.ConnectionStrings.Efforts">
+            <summary>
+            connection string to Efforts DB
+            </summary>
+        </member>
+        <member name="T:Efforts.Controllers.WorkerController">
+            <summary>
+            API controller for Workers
+            </summary>
+        </member>
+        <member name="M:Efforts.Controllers.WorkerController.#ctor(Efforts.Services.WorkerService)">
+            <summary>
+            constructor
+            </summary>
+            <param name="workerService"></param>
+        </member>
+        <member name="M:Efforts.Controllers.WorkerController.Get(System.Boolean)">
+            <summary>
+            get list of workers
+            </summary>
+            <param name="activeOnly">get only active workers</param>
+            <returns></returns>
+        </member>
+        <member name="M:Efforts.Controllers.WorkerController.Get(System.Int32)">
+            <summary>
+            get Worker details by id
+            </summary>
+            <param name="id">unique identifier</param>
+            <returns></returns>
+        </member>
+        <member name="T:Efforts.Dal.EffortsDal">
+            <summary>
+            data layer for Efforts DB
+            </summary>
+        </member>
+        <member name="M:Efforts.Dal.EffortsDal.#ctor(Microsoft.Extensions.Options.IOptions{Efforts.Configuration.ConnectionStrings})">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:Efforts.Dal.EffortsDal.GetWorkers(System.Boolean)">
+            <summary>
+            get workers list with details
+            </summary>
+            <param name="onlyActive">get only active workers</param>
+            <returns></returns>
+        </member>
+        <member name="M:Efforts.Dal.EffortsDal.GetWorkerById(System.Int32)">
+            <summary>
+            get workers list with details
+            </summary>
+            <param name="id">unique identifier</param>
+            <returns></returns>
+        </member>
+        <member name="T:Efforts.Models.Worker">
+            <summary>
+            Worker class
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.Id">
+            <summary>
+            unique identifier
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.Name">
+            <summary>
+            First Name + Last Name
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.Login">
+            <summary>
+            Login
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.Email">
+            <summary>
+            EMail address
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.DateBeg">
+            <summary>
+            date of work start
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.DateEnd">
+            <summary>
+            date of work end
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.IsAdmin">
+            <summary>
+            Administrator
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.Status">
+            <summary>
+            Working status
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.AuthorCreate">
+            <summary>
+            Author creation
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.AuthorLastModif">
+            <summary>
+            Author of last modification
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.DateCreate">
+            <summary>
+            Date of creation
+            </summary>
+        </member>
+        <member name="P:Efforts.Models.Worker.DateLastModif">
+            <summary>
+            Date of last modification
+            </summary>
+        </member>
+        <member name="T:Efforts.Program">
+            <summary>
+            main class for Efforts API
+            </summary>
+        </member>
+        <member name="M:Efforts.Program.Main(System.String[])">
+            <summary>
+            main method
+            </summary>
+            <param name="args">command line arguments</param>
+        </member>
+        <member name="M:Efforts.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            create configuration
+            </summary>
+            <param name="args">command line arguments</param>
+            <returns></returns>
+        </member>
+        <member name="T:Efforts.Services.WorkerService">
+            <summary>
+            service for workers
+            </summary>
+        </member>
+        <member name="M:Efforts.Services.WorkerService.#ctor(Efforts.Dal.EffortsDal)">
+            <summary>
+            constructor
+            </summary>
+            <param name="efforts"></param>
+        </member>
+        <member name="M:Efforts.Services.WorkerService.GetWorkers(System.Boolean)">
+            <summary>
+            returns list of workers with details
+            </summary>
+            <param name="onlyActive">select only active workers</param>
+            <returns>list of Worker</returns>
+        </member>
+        <member name="M:Efforts.Services.WorkerService.GetWorkerById(System.Int32)">
+            <summary>
+            returns worker details by id
+            </summary>
+            <param name="id">unique identifier</param>
+            <returns>Worker object</returns>
+        </member>
+        <member name="T:Efforts.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="M:Efforts.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Efforts.Startup.Configuration">
+            <summary>
+            API configuration
+            </summary>
+        </member>
+        <member name="M:Efforts.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Efforts.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
